@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base font families from Google Fonts (loaded via <link> in layout.tsx) */
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-space-grotesk: 'Space Grotesk', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #11123b; }
+::-webkit-scrollbar-thumb { background: #0c4d8b; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #83cdef; }
+
+/* Prose styling for blog content */
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #11123b;
+  font-family: var(--font-space-grotesk);
+}
+.prose a { color: #0c4d8b; text-decoration: underline; }
+.prose a:hover { color: #f7931e; }
+
+/* Ticker animation for testimonials */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-animate {
+  animation: ticker 40s linear infinite;
+}
+
+/* Float animation for hero card */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.float-animate {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Orange animated underline for hero heading */
+.underline-orange {
+  position: relative;
+  display: inline-block;
+}
+.underline-orange::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #f7931e;
+  border-radius: 2px;
+}
