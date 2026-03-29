@@ -44,13 +44,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      {/* Minimal hero band */}
-      <div className="bg-idc-navy pt-28 pb-8">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Cover image strip could go here — currently using frontmatter.coverImage */}
-        </div>
-      </div>
-
+      <div className="bg-idc-navy pt-28 pb-8" />
       <div className="bg-white">
         <BlogContent frontmatter={post.frontmatter} readingTime={post.readingTime}>
           <MDXRemote source={post.content} />
