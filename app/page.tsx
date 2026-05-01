@@ -11,7 +11,7 @@ import CTABanner from "@/components/home/CTABanner";
 export const metadata: Metadata = {
   title: "Home | India Development Company",
   description:
-    "India Development Company — 30+ years of precision hard chrome plating and industrial manufacturing in Kolkata. Serving 80+ industrial clients across India.",
+    "India Development Company — 25+ years of precision hard chrome plating and industrial manufacturing in Kolkata. Serving 80+ industrial clients across India.",
   openGraph: {
     title: "Home | India Development Company",
     description:
