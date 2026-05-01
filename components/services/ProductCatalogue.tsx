@@ -13,7 +13,7 @@ interface CatalogueCategory {
 
 const categories: CatalogueCategory[] = [
   {
-    image: "https://placehold.co/600x400/11123B/83CDEF?text=PVC+Extrusion+Tools",
+    image: "https://eawgcaiojcewbfemfhtq.supabase.co/storage/v1/object/public/All%20Images/Piston_Rods.png",
     category: "PVC Extrusion Tools",
     products: ["Die-Head", "Adapter", "Spider", "Cone", "HDP Die", "Spiral", "Filter", "Mandrel"],
     spec: "Custom sizes to client drawings",
