@@ -54,52 +54,46 @@ const ProductCatalogue = () => {
           centered
         />
 
-        {/* CAROUSEL CONTAINER */}
-        <div className="mt-6 overflow-x-auto scrollbar-hide">
-          <div className="flex gap-6 w-max px-1">
-            {categories.map((cat, index) => (
-              <motion.div
-                key={cat.category}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="min-w-[260px] sm:min-w-[300px] lg:min-w-[320px] bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-idc-blue/30 transition-all duration-300"
-              >
-                {/* IMAGE (4:5 preserved) */}
-                <div className="relative w-full aspect-[4/5] overflow-hidden">
-                  <Image
-                    src={cat.image}
-                    alt={cat.category}
-                    fill
-                    className="object-cover"
-                    sizes="300px"
-                  />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+          {categories.map((cat, index) => (
+            <motion.div
+              key={cat.category}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-idc-blue/30 transition-all duration-300"
+            >
+              <div className="relative w-full aspect-[4/5] overflow-hidden">
+                <Image
+                  src={cat.image}
+                  alt={cat.category}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+
+              <div className="p-5">
+                <h3 className="font-heading font-bold text-idc-navy text-lg mb-1">
+                  {cat.category}
+                </h3>
+                <p className="text-idc-blue text-xs font-semibold mb-4 bg-idc-sky/10 inline-block px-2 py-0.5 rounded border border-idc-sky/30">
+                  {cat.spec}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {cat.products.map((product) => (
+                    <span
+                      key={product}
+                      className="bg-idc-navy/5 text-idc-navy text-xs px-3 py-1 rounded-full border border-idc-navy/10 font-medium"
+                    >
+                      {product}
+                    </span>
+                  ))}
                 </div>
-
-                <div className="p-5">
-                  <h3 className="font-heading font-bold text-idc-navy text-lg mb-1">
-                    {cat.category}
-                  </h3>
-
-                  <p className="text-idc-blue text-xs font-semibold mb-4 bg-idc-sky/10 inline-block px-2 py-0.5 rounded border border-idc-sky/30">
-                    {cat.spec}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {cat.products.map((product) => (
-                      <span
-                        key={product}
-                        className="bg-idc-navy/5 text-idc-navy text-xs px-3 py-1 rounded-full border border-idc-navy/10 font-medium"
-                      >
-                        {product}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
